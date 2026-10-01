@@ -32,23 +32,23 @@ Dersi tamamlayan öğrenciler:
 
 ## Haftalık Ders Akışı
 
-| Hafta | Konu | Kapsam | Laboratuvar / Uygulama | Ders Notu |
+| Hafta | Konu | Kapsam | Laboratuvar / Uygulama | Not Defteri |
 |---|---|---|---|---|
-| 1 | Makine öğrenmesine giriş | ML nedir; denetimli, denetimsiz ve pekiştirmeli öğrenme; ML iş akışı; uygulama alanları | Ortam kurulumu (Jupyter/Colab), NumPy ve pandas tekrarı | [Hafta01.md](Hafta01.md) |
-| 2 | Veri hazırlama ve keşifsel veri analizi | Eksik veri, aykırı değerler, ölçekleme, kategorik kodlama, eğitim/doğrulama/test ayrımı, veri sızıntısı | Gerçek bir veri setinde keşifsel analiz ve ön işleme (Titanic) | [Hafta02.md](Hafta02.md) |
-| 3 | Doğrusal regresyon | En küçük kareler, kapalı form çözümü, gradyan iniş, polinom regresyon, MSE/MAE/R² | Gradyan inişi sıfırdan kodlama, sonucu scikit-learn ile karşılaştırma | [Hafta03.md](Hafta03.md) |
-| 4 | Genelleme ve model değerlendirme | Aşırı ve eksik öğrenme, yanlılık-varyans ödünleşimi, k-katlı çapraz doğrulama, Ridge/Lasso | Öğrenme eğrileri, düzenlileştirme katsayısının etkisi | [Hafta04.md](Hafta04.md) |
-| 5 | Lojistik regresyon ve sınıflandırma metrikleri | Sigmoid, çapraz entropi kaybı, karmaşıklık matrisi, precision/recall/F1, ROC-AUC, dengesiz veri | İkili sınıflandırma, eşik değeri analizi | [Hafta05.md](Hafta05.md) |
-| 6 | Örnek tabanlı ve olasılıksal modeller | k-NN, mesafe ölçüleri, boyutluluk laneti, Bayes teoremi, Naive Bayes | Metin sınıflandırma (spam tespiti) | [Hafta06.md](Hafta06.md) |
-| 7 | Karar ağaçları | Entropi, bilgi kazancı, Gini, budama, yorumlanabilirlik | Ağaç görselleştirme; **proje önerisi teslimi** | [Hafta07.md](Hafta07.md) |
+| 1 | Makine öğrenmesine giriş | ML nedir; denetimli, denetimsiz ve pekiştirmeli öğrenme; ML iş akışı; uygulama alanları | Ortam kurulumu (Jupyter/Colab), NumPy ve pandas tekrarı | [Hafta01.ipynb](Hafta01.ipynb) |
+| 2 | Veri hazırlama ve keşifsel veri analizi | Eksik veri, aykırı değerler, ölçekleme, kategorik kodlama, eğitim/doğrulama/test ayrımı, veri sızıntısı | Gerçek bir veri setinde keşifsel analiz ve ön işleme (Titanic) | [Hafta02.ipynb](Hafta02.ipynb) |
+| 3 | Doğrusal regresyon | En küçük kareler, kapalı form çözümü, gradyan iniş, polinom regresyon, MSE/MAE/R² | Gradyan inişi sıfırdan kodlama, sonucu scikit-learn ile karşılaştırma | [Hafta03.ipynb](Hafta03.ipynb) |
+| 4 | Genelleme ve model değerlendirme | Aşırı ve eksik öğrenme, yanlılık-varyans ödünleşimi, k-katlı çapraz doğrulama, Ridge/Lasso | Öğrenme eğrileri, düzenlileştirme katsayısının etkisi | [Hafta04.ipynb](Hafta04.ipynb) |
+| 5 | Lojistik regresyon ve sınıflandırma metrikleri | Sigmoid, çapraz entropi kaybı, karmaşıklık matrisi, precision/recall/F1, ROC-AUC, dengesiz veri | İkili sınıflandırma, eşik değeri analizi | [Hafta05.ipynb](Hafta05.ipynb) |
+| 6 | Örnek tabanlı ve olasılıksal modeller | k-NN, mesafe ölçüleri, boyutluluk laneti, Bayes teoremi, Naive Bayes | Metin sınıflandırma (spam tespiti) | [Hafta06.ipynb](Hafta06.ipynb) |
+| 7 | Karar ağaçları | Entropi, bilgi kazancı, Gini, budama, yorumlanabilirlik | Ağaç görselleştirme; **proje önerisi teslimi** | [Hafta07.ipynb](Hafta07.ipynb) |
 | — | **Ara sınav** | 1–7. haftalar | | |
-| 8 | Topluluk yöntemleri | Bagging, Random Forest, boosting (AdaBoost, Gradient Boosting), XGBoost/LightGBM'e genel bakış | Tablo verisinde model karşılaştırması | [Hafta08.md](Hafta08.md) |
-| 9 | Destek vektör makineleri | Maksimum marj, yumuşak marj, kernel hilesi (RBF, polinom) | Karar sınırı görselleştirme; Pipeline ile GridSearchCV | [Hafta09.md](Hafta09.md) |
-| 10 | Kümeleme | k-means, hiyerarşik kümeleme, DBSCAN, siluet skoru, dirsek yöntemi | Müşteri segmentasyonu | [Hafta10.md](Hafta10.md) |
-| 11 | Boyut indirgeme ve öznitelik seçimi | PCA (özdeğer yorumu), t-SNE ve UMAP ile görselleştirme, filtre/sarmalayıcı yöntemler | MNIST üzerinde PCA ve t-SNE | [Hafta11.md](Hafta11.md) |
-| 12 | Yapay sinir ağlarına giriş | Perceptron, çok katmanlı ağ, aktivasyon fonksiyonları, geri yayılım, SGD/Adam, dropout | PyTorch veya Keras ile MLP | [Hafta12.md](Hafta12.md) |
-| 13 | Derin öğrenmeye bakış | CNN temelleri (evrişim, havuzlama), transfer öğrenme; dizi modelleri ve Transformer'a kısa giriş | Önceden eğitilmiş bir CNN ile görüntü sınıflandırma | [Hafta13.md](Hafta13.md) |
-| 14 | Uygulamada ML ve etik | Uçtan uca pipeline, model kaydetme ve dağıtıma giriş, açıklanabilirlik (SHAP), yanlılık ve adillik | **Dönem projesi sunumları** | [Hafta14.md](Hafta14.md) |
+| 8 | Topluluk yöntemleri | Bagging, Random Forest, boosting (AdaBoost, Gradient Boosting), XGBoost/LightGBM'e genel bakış | Tablo verisinde model karşılaştırması | [Hafta08.ipynb](Hafta08.ipynb) |
+| 9 | Destek vektör makineleri | Maksimum marj, yumuşak marj, kernel hilesi (RBF, polinom) | Karar sınırı görselleştirme; Pipeline ile GridSearchCV | [Hafta09.ipynb](Hafta09.ipynb) |
+| 10 | Kümeleme | k-means, hiyerarşik kümeleme, DBSCAN, siluet skoru, dirsek yöntemi | Müşteri segmentasyonu | [Hafta10.ipynb](Hafta10.ipynb) |
+| 11 | Boyut indirgeme ve öznitelik seçimi | PCA (özdeğer yorumu), t-SNE ve UMAP ile görselleştirme, filtre/sarmalayıcı yöntemler | MNIST üzerinde PCA ve t-SNE | [Hafta11.ipynb](Hafta11.ipynb) |
+| 12 | Yapay sinir ağlarına giriş | Perceptron, çok katmanlı ağ, aktivasyon fonksiyonları, geri yayılım, SGD/Adam, dropout | PyTorch veya Keras ile MLP | [Hafta12.ipynb](Hafta12.ipynb) |
+| 13 | Derin öğrenmeye bakış | CNN temelleri (evrişim, havuzlama), transfer öğrenme; dizi modelleri ve Transformer'a kısa giriş | Önceden eğitilmiş bir CNN ile görüntü sınıflandırma | [Hafta13.ipynb](Hafta13.ipynb) |
+| 14 | Uygulamada ML ve etik | Uçtan uca pipeline, model kaydetme ve dağıtıma giriş, açıklanabilirlik (SHAP), yanlılık ve adillik | **Dönem projesi sunumları** | [Hafta14.ipynb](Hafta14.ipynb) |
 
 ## Haftalara Göre Ayrıntılı İçerik
 
@@ -179,7 +179,7 @@ Dersi tamamlayan öğrenciler:
 | Dönem projesi | Öneri (7. hafta), rapor, kod, model kartı ve sunum (14. hafta) |
 | Final sınavı | Tüm dönem |
 
-Ağırlıklar, dersi veren öğretim elemanı tarafından ders başında duyurulur. Proje değerlendirme ölçütleri [Hafta14.md](Hafta14.md) içinde yer alır.
+Ağırlıklar, dersi veren öğretim elemanı tarafından ders başında duyurulur. Proje değerlendirme ölçütleri [Hafta14.ipynb](Hafta14.ipynb) içinde yer alır.
 
 ## Kurulum
 
@@ -232,30 +232,33 @@ pip install imbalanced-learn xgboost lightgbm umap-learn torch torchvision shap 
 
 ## Dosya Yapısı
 
-Her hafta için iki dosya bulunur: okunabilir ders notu (`.md`) ve aynı içeriğin çalıştırılabilir Jupyter not defteri (`.ipynb`).
+Her haftanın anlatımı ve kodları tek bir Jupyter not defterinde (`.ipynb`) bulunur.
 
 ```
 ML Ders Dokümanı/
 ├── README.md                      ← bu dosya
-├── Hafta01.md / Hafta01.ipynb     Makine öğrenmesine giriş
-├── Hafta02.md / Hafta02.ipynb     Veri hazırlama ve keşifsel veri analizi
-├── Hafta03.md / Hafta03.ipynb     Doğrusal regresyon
-├── Hafta04.md / Hafta04.ipynb     Genelleme ve model değerlendirme
-├── Hafta05.md / Hafta05.ipynb     Lojistik regresyon ve sınıflandırma metrikleri
-├── Hafta06.md / Hafta06.ipynb     Örnek tabanlı ve olasılıksal modeller
-├── Hafta07.md / Hafta07.ipynb     Karar ağaçları
-├── Hafta08.md / Hafta08.ipynb     Topluluk yöntemleri
-├── Hafta09.md / Hafta09.ipynb     Destek vektör makineleri
-├── Hafta10.md / Hafta10.ipynb     Kümeleme
-├── Hafta11.md / Hafta11.ipynb     Boyut indirgeme ve öznitelik seçimi
-├── Hafta12.md / Hafta12.ipynb     Yapay sinir ağlarına giriş
-├── Hafta13.md / Hafta13.ipynb     Derin öğrenmeye bakış
-└── Hafta14.md / Hafta14.ipynb     Uygulamada ML ve etik
+├── Hafta01.ipynb                 Makine öğrenmesine giriş
+├── Hafta02.ipynb                 Veri hazırlama ve keşifsel veri analizi
+├── Hafta03.ipynb                 Doğrusal regresyon
+├── Hafta04.ipynb                 Genelleme ve model değerlendirme
+├── Hafta05.ipynb                 Lojistik regresyon ve sınıflandırma metrikleri
+├── Hafta06.ipynb                 Örnek tabanlı ve olasılıksal modeller
+├── Hafta07.ipynb                 Karar ağaçları
+├── Hafta08.ipynb                 Topluluk yöntemleri
+├── Hafta09.ipynb                 Destek vektör makineleri
+├── Hafta10.ipynb                 Kümeleme
+├── Hafta11.ipynb                 Boyut indirgeme ve öznitelik seçimi
+├── Hafta12.ipynb                 Yapay sinir ağlarına giriş
+├── Hafta13.ipynb                 Derin öğrenmeye bakış
+├── Hafta14.ipynb                 Uygulamada ML ve etik
+└── gorseller/
+    ├── hafta01/                   Hafta 1 görselleri (.png) ve animasyonları (.gif)
+    └── hafta02/                   Hafta 2 görselleri (.png) ve animasyonları (.gif)
 ```
 
 ### Jupyter not defterleri hakkında
 
-- Not defterleri, ders notlarındaki anlatımı markdown hücrelerinde, Python örneklerini ise kod hücrelerinde içerir.
+- Not defterleri, konu anlatımını markdown hücrelerinde, Python örneklerini ise kod hücrelerinde içerir.
 - Hücreler **yukarıdan aşağıya sırayla** çalıştırılmalıdır; sonraki hücreler önceki hücrelerde tanımlanan değişkenleri kullanır.
 - Her not defterinin başında, o hafta gereken paketleri kuran (yorum satırı halinde) bir kurulum hücresi vardır.
 - Tek başına çalışmayan gösterim amaçlı kod parçaları (ör. "yanlış kullanım" örnekleri, FastAPI servis dosyası) markdown içinde kod bloğu olarak bırakılmıştır.
@@ -264,7 +267,7 @@ ML Ders Dokümanı/
 
 ## Notları Nasıl Kullanmalı?
 
-1. Her haftanın notunu derse gelmeden önce okuyun. Özellikle elle hesaplama örneklerini kâğıt üzerinde siz de yapın.
+1. Her haftanın not defterini derse gelmeden önce okuyun. Özellikle elle hesaplama örneklerini kâğıt üzerinde siz de yapın.
 2. "Sıfırdan" yazılan kodları kopyalamak yerine kendiniz yazmaya çalışın, sonra kütüphane sonucuyla karşılaştırın.
 3. Haftanın `.ipynb` not defterini Jupyter veya Colab'da açıp kod hücrelerini sırayla çalıştırın; laboratuvar görevlerini aynı not defterinde tamamlayın.
 4. Her notun sonundaki **"Kendinizi Sınayın"** sorularıyla konuyu pekiştirin.
