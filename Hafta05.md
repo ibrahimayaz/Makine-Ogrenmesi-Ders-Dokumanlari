@@ -182,19 +182,46 @@ print(np.round(model.predict_proba(X_test[:2]), 3))
 
 ## Karmaşıklık matrisi
 
-İkili sınıflandırmada gerçek etiket ile model tahminini karşılaştıran tabloya **karmaşıklık matrisi** denir:
+İkili sınıflandırmada gerçek etiket ile model tahminini karşılaştıran tabloya **karmaşıklık matrisi** denir. Burada satırlar modelin tahminlerini, sütunlar gerçek etiketleri gösterir:
 
-|  | Tahmin negatif | Tahmin pozitif |
+|  | Gerçek negatif | Gerçek pozitif |
 |---|---:|---:|
-| Gerçek negatif | True Negative (TN) | False Positive (FP) |
-| Gerçek pozitif | False Negative (FN) | True Positive (TP) |
+| Tahmin negatif | Doğru negatif (TN) | Yanlış negatif (FN) |
+| Tahmin pozitif | Yanlış pozitif (FP) | Doğru pozitif (TP) |
 
-- **TP:** Pozitif örnek doğru biçimde pozitif tahmin edilmiştir.
-- **TN:** Negatif örnek doğru biçimde negatif tahmin edilmiştir.
-- **FP:** Negatif örnek yanlışlıkla pozitif tahmin edilmiştir; yanlış alarmdır.
-- **FN:** Pozitif örnek yanlışlıkla negatif tahmin edilmiştir; gözden kaçırmadır.
+Terimlerdeki **pozitif** ve **negatif**, modelin tahmin ettiği sınıfı belirtir. **Doğru**, tahminin gerçek etiketle eşleştiği; **yanlış** ise eşleşmediği anlamına gelir:
 
-Örneğin `TN = 50`, `FP = 10`, `FN = 5`, `TP = 35` olsun. Toplam `100` örnekte `85` doğru tahmin vardır.
+- **TP — Doğru pozitif (True Positive):** Gerçekte pozitif olan bir örnek, pozitif tahmin edilmiştir.
+- **TN — Doğru negatif (True Negative):** Gerçekte negatif olan bir örnek, negatif tahmin edilmiştir.
+- **FP — Yanlış pozitif (False Positive):** Gerçekte negatif olan bir örnek, pozitif tahmin edilmiştir. Bu durum yanlış alarm olarak düşünülebilir.
+- **FN — Yanlış negatif (False Negative):** Gerçekte pozitif olan bir örnek, negatif tahmin edilmiştir. Bu durum pozitif bir örneğin gözden kaçırılmasıdır.
+
+Örneğin bir modelin e-postaları istenmeyen mesaj (spam) olup olmadıklarına göre sınıflandırdığını düşünelim. Bu örnekte **pozitif = spam**, **negatif = spam değil** olsun. Gerçek etiketi bilinen 100 e-posta için sonuçlar şöyle olsun:
+
+| Durum | Gerçek etiket | Modelin tahmini | E-posta sayısı |
+|---|---|---|---:|
+| TP | Spam | Spam | 35 |
+| TN | Spam değil | Spam değil | 50 |
+| FP | Spam değil | Spam | 10 |
+| FN | Spam | Spam değil | 5 |
+
+Bu örnekte:
+
+- **TP = 35:** Gerçekte spam olan ve modelin de spam olarak tahmin ettiği e-posta sayısıdır.
+- **TN = 50:** Gerçekte spam olmayan ve modelin de spam değil olarak tahmin ettiği e-posta sayısıdır.
+- **FP = 10:** Gerçekte spam olmayan ancak modelin yanlışlıkla spam olarak tahmin ettiği e-posta sayısıdır.
+- **FN = 5:** Gerçekte spam olan ancak modelin yanlışlıkla spam değil olarak tahmin ettiği e-posta sayısıdır.
+
+Bu verilere ait karmaşıklık matrisi şöyledir:
+
+|  | Gerçek: spam değil | Gerçek: spam |
+|---|---:|---:|
+| Tahmin: spam değil | TN = 50 | FN = 5 |
+| Tahmin: spam | FP = 10 | TP = 35 |
+
+Toplam `100` e-postanın `85` tanesi doğru sınıflandırılmıştır.
+
+scikit-learn'ün `confusion_matrix` fonksiyonu ise varsayılan olarak gerçek etiketleri satırlarda, tahminleri sütunlarda gösterir. Yukarıdaki düzeni elde etmek için matrisin transpozu (`.T`) alınabilir.
 
 ### Temel metrikler
 
@@ -285,7 +312,8 @@ model.fit(X_egitim, y_egitim)
 olasilik = model.predict_proba(X_test)[:, 1]
 tahmin = (olasilik >= 0.5).astype(int)
 
-print("Karmaşıklık matrisi:\n", confusion_matrix(y_test, tahmin))
+print("Karmaşıklık matrisi (satır: tahmin, sütun: gerçek):\n",
+      confusion_matrix(y_test, tahmin).T)
 print("Accuracy:", accuracy_score(y_test, tahmin))
 print("Precision:", precision_score(y_test, tahmin, zero_division=0))
 print("Recall:", recall_score(y_test, tahmin, zero_division=0))
@@ -309,7 +337,7 @@ Meme kanseri örneğinde kötü huylu sınıfı pozitif kabul edelim. `FN` maliy
 
 `maliyet = 5 × FN + 1 × FP`
 
-olur. Aşağıdaki kod, eğitim verisini model kurmak için, doğrulama verisini eşiği seçmek için ve test verisini yalnızca son değerlendirme için kullanır. Böylece test kümesi eşik seçiminde kullanılmaz.
+olur. Aşağıdaki kod, eğitim verisini model kurmak için, doğrulama verisini eşiği seçmek için ve test verisini yalnızca son değerlendirme için kullanır. Böylece test kümesi eşik seçiminde kullanılmaz. `tn, fp, fn, tp` değerleri, scikit-learn'ün transpoz alınmamış matrisinden çıkarılır; görüntülenen matris ise yukarıdaki düzene uyacak şekilde transpoz alınarak gösterilir.
 
 ```python
 import numpy as np
@@ -356,7 +384,8 @@ tn, fp, fn, tp = confusion_matrix(
     y_test, test_tahmin, labels=[0, 1]
 ).ravel()
 
-print("Test karmaşıklık matrisi:\n", confusion_matrix(y_test, test_tahmin))
+print("Test karmaşıklık matrisi (satır: tahmin, sütun: gerçek):\n",
+      confusion_matrix(y_test, test_tahmin).T)
 print("Test maliyeti (5 × FN + FP):", 5 * fn + fp)
 print("Test recall:", recall_score(y_test, test_tahmin, zero_division=0))
 print("Test precision:", precision_score(y_test, test_tahmin, zero_division=0))
