@@ -39,7 +39,7 @@ Dersi tamamlayan öğrenciler:
 | 3 | Doğrusal regresyon | En küçük kareler, kapalı form çözümü, gradyan iniş, polinom regresyon, MSE/MAE/R² | Gradyan inişi sıfırdan kodlama, sonucu scikit-learn ile karşılaştırma | [Hafta03.md](Hafta03.md) |
 | 4 | Genelleme ve model değerlendirme | Aşırı ve eksik öğrenme, yanlılık-varyans ödünleşimi, k-katlı çapraz doğrulama, Ridge/Lasso | Öğrenme eğrileri, düzenlileştirme katsayısının etkisi | [Hafta04.md](Hafta04.md) |
 | 5 | Lojistik regresyon ve sınıflandırma metrikleri | Sigmoid, çapraz entropi kaybı, karmaşıklık matrisi, precision/recall/F1, ROC-AUC, dengesiz veri | İkili sınıflandırma, eşik değeri analizi | [Hafta05.md](Hafta05.md) |
-| 6 | Örnek tabanlı ve olasılıksal modeller | k-NN, mesafe ölçüleri, boyutluluk laneti, Bayes teoremi, Naive Bayes | Metin sınıflandırma (spam tespiti) | [Hafta06.md](Hafta06.md) |
+| 6 | Örnek tabanlı ve olasılıksal modeller | k-NN, mesafe ölçüleri, Bayes teoremi, Naive Bayes | Metin sınıflandırma (spam tespiti) | [Hafta06.md](Hafta06.md) |
 | 7 | Karar ağaçları | Entropi, bilgi kazancı, Gini, budama, yorumlanabilirlik | Ağaç görselleştirme; **proje önerisi teslimi** | [Hafta07.md](Hafta07.md) |
 | — | **Ara sınav** | 1–7. haftalar | | |
 | 8 | Topluluk yöntemleri | Bagging, Random Forest, boosting (AdaBoost, Gradient Boosting), XGBoost/LightGBM'e genel bakış | Tablo verisinde model karşılaştırması | [Hafta08.md](Hafta08.md) |
@@ -97,9 +97,8 @@ Dersi tamamlayan öğrenciler:
 - **Lab:** Meme kanseri verisinde eşik analizi ve maliyete dayalı eşik seçimi
 
 ### Hafta 6 — Örnek Tabanlı ve Olasılıksal Modeller
-- k-NN'in adım adım çalışması, k seçimi, ağırlıklı oylama
+- k-NN'in adım adım çalışması, k seçimi
 - Mesafe ölçüleri: Öklid, Manhattan, Chebyshev, Minkowski, kosinüs
-- Boyutluluk laneti (sayısal deney)
 - Bayes teoremi ve tıbbi test paradoksu
 - Naive Bayes: elle spam sınıflandırma, Laplace düzeltmesi, log olasılıklar
 - **Lab:** SMS spam tespiti; Naive Bayes, k-NN ve lojistik regresyon karşılaştırması
